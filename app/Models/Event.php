@@ -11,6 +11,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Event extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'category_id',
+        'location_id',
+        'description',
+    ];
     public function category(): BelongsTo
     {
         return $this->belongsTo(EventCategory::class);

@@ -15,7 +15,17 @@ Route::get('hello', function () {
 
 Route::get('/events', [EventController::class, 'index']);
 
+Route::get('/event/create', [EventController::class, 'create']);
+
+Route::get('/event/edit/{id}', [EventController::class, 'edit']);
+
+Route::post('/event/update/{id}', [EventController::class, 'update']);
+
+Route::get('/event/destroy/{id}', [EventController::class, 'destroy']);
+
 Route::get('/event/{id}', [EventController::class, 'show']);
+
+Route::post('/event', [EventController::class, 'store']);
 
 Route::get('/locations', [LocationController::class, 'index']);
 
